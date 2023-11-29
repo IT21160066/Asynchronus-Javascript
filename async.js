@@ -165,7 +165,7 @@ kitchen();
 
 console.log("other task working");
 */
-
+/*
 function time(ms) {
   return new Promise((resolve, reject) => {
     if (issShopOpen) {
@@ -209,3 +209,4 @@ async function kitchen() {
 }
 
 kitchen();
+*/
