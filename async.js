@@ -37,12 +37,13 @@ function two() {
 one(two);
 */
 
+/*
 let stock = {
   Fruits: ["apple", "orange", "banana"],
   liquid: ["water", "ice"],
   holder: ["cone", "cup", "stick"],
   toppings: ["chocalte", "peanuts"],
-};
+};*/
 
 /*
 let order = (fruit_name, call_production) => {
@@ -145,7 +146,7 @@ order(2000, () => console.log(`${stock.Fruits[0]} was selected`))
 
 //async/ await
 
-let issShopOpen = false;
+//let issShopOpen = false;
 /*
 let toppingChoice = () => {
   return new Promise((resolve, reject) => {
