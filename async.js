@@ -1,5 +1,7 @@
 //synchronas system
 
+//const { reject } = require("async");
+
 /*
 console.log(" I ");
 console.log(" eat ");
@@ -211,3 +213,127 @@ async function kitchen() {
 
 kitchen();
 */
+
+/*
+console.log("init");
+
+function doSomething(number, succes, error) {
+  if (number % 2 == 0) {
+    setTimeout(function () {
+      succes();
+    }, 2000);
+  } else {
+    error();
+  }
+}
+
+function child() {
+  console.log("child");
+}
+
+doSomething(
+  12,
+  function () {
+    console.log("success");
+  },
+  function () {
+    console.log("error");
+  }
+);
+
+console.log("end");
+*/
+
+console.log("init");
+
+// function executeAPICall(data) {
+//   return new Promise(function (resolve, reject) {
+//     if (data === "X") {
+//       setTimeout(() => {
+//         reject("Error");
+//       }, 2000);
+//     } else {
+//       setTimeout(() => {
+//         resolve("Response");
+//       }, 2000);
+//     }
+//   });
+// }
+
+// executeAPICall("X")
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+
+// const value = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("success");
+//     //reject("Error");
+//   }, 2000);
+// });
+
+// value
+//   .then((result) => {
+//     //console.log(result);
+//     //return result + " final result";
+
+//     console.log("1 st then");
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("1 st ok");
+//       }, 2000);
+//     });
+//   })
+//   .then((result) => {
+//     console.log("2 nd then");
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log("Done");
+//   });
+
+//--------------------------------------------------
+
+// const value = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve('success');
+//     reject("error");
+//   }, 2000);
+// });
+
+// async function doSomething() {
+//   // const response = await value;
+//   // console.log("async function executed", response);
+
+//   try {
+//     const response = await value;
+//     console.log("async function executed", response);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// doSomething();
+
+const value = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    // resolve('success');
+    reject("error");
+  }, 2000);
+});
+
+(async () => {
+  // console.log("immediately incoked function");
+  try {
+    const response = await value;
+    console.log("async function executed", response);
+  } catch (error) {
+    console.log(error);
+  }
+})();
